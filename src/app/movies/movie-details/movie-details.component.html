@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div id="movie" *ngFor="let k of list">
+    <div *ngIf="this.id==k.movieID">
+      <h3>Movie Name: {{k.movieName}}</h3>
+      <h3>Movie Description: {{k.description}}</h3>
+      <h3>Cast : </h3>
+      <div id="cast">
+        <ul *ngFor="let y of casted">
+          <li>{{y.applicationUser.userName}} |</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

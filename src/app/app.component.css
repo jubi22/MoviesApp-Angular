@@ -1,11 +1,16 @@
-.navbar {
-    background-color: black;
+/*.navbar{
+    background-color:black;
+}*/
+.navbar a{
+  color: white;
 }
-
-.navbar a {
-    color: white !important
-  }
-
-.navbar a:hover {
-    color: yellow !important
-  }
+/*.navbar a:visited{
+    color:white
+}*/
+  .navbar a:hover {
+    color: yellow;
+  }
+#logout{
+    margin-right:10px;
+    color:red
+}

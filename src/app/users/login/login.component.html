@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-4 col-md-offset-4">
-    <form #validform="ngForm" (ngSubmit)="onSubmit(validform)">
+    <form #validform="ngForm" (submit)="onSubmit(validform)">
+
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="Email" class="form-control" ngModel required email
@@ -17,8 +18,11 @@
           Password not valid!!
         </span>
       </div>
+
       <button class="btn btn-success" type="submit"
-              [disabled]="!validform.valid" >Login</button>
+              [disabled]="!validform.valid">
+        Login
+      </button>
     </form>
   </div>
 </div>

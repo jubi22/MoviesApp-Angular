@@ -1,0 +1,33 @@
+<div class="row" *ngFor="let k of list">
+  <div class="col-md-4 col-md-offset-4">
+
+    <form #validform="ngForm" (submit)="onSubmit(validform)" *ngIf="this.id==k.movieID">
+
+      <div class="form-group">
+        <label for="mname">Name</label>
+        <input type="text" id="mname" name="MovieName" class="form-control" ngModel required
+               #mname="ngModel" />
+        <span class="help-block" *ngIf="!mname.valid && mname.touched">
+          Enter Name!!
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="des">Description:</label>
+        <input type="text" id="des" name="Description" class="form-control" ngModel required
+               #des="ngModel" />
+        <span class="help-block" *ngIf="!des.valid && des.touched">
+          Enter Date of Birth!
+        </span>
+      </div>
+      <input type="hidden" name="MovieID" ngModel="{{k.movieID}}" />
+
+      <button class="btn btn-success" type="submit"
+              [disabled]="!validform.valid">
+        Update Movie
+      </button>&nbsp;
+      <button class="btn btn-danger" routerLink="/movies">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

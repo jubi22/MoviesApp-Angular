@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <!--<table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        
+      </tr>
+    </thead>
+    <tbody *ngFor="let k of list">
+      <tr *ngIf="this.id==k.id">
+
+        <td>{{k.userName}}</td>
+        <td>{{k.email}}</td>
+      </tr>
+    </tbody>
+  </table>-->
+  <div id="user" class="row" *ngFor="let k of list">
+    <div *ngIf="this.id==k.id">
+      <h4>Name: {{k.userName}}</h4>
+      <h4>Email: {{k.email}}</h4>
+      <h4>Date of Birth: {{k.dob}}</h4>
+      <h4>Movies:</h4>
+      <div id="cast">
+        <ul *ngFor="let y of casted">
+          <li>{{y.movies.movieName}} |</li>
+        </ul>
+      </div>
+
+      <form #validform="ngForm" (submit)="onSubmit(validform)">
+        <div class="form-group">
+          <select id="movie" name="MovieID" ngModel>
+            <option value="">Choose a Movie</option>
+            <option *ngFor="let x of movie" [ngValue]="x.movieID">{{x.movieName}}</option>
+          </select>
+        </div>
+        <input type="hidden" name="UserID" ngModel="{{this.id}}" />
+        <button type="submit" class="btn btn-success">Add movie</button>
+      </form>
+    </div>
+  </div>
+</div>

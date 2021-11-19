@@ -1,0 +1,11 @@
+#user{
+    margin-left:70px;
+    margin-top:10px;
+}
+#cast ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: inline-flex;
+  font-weight: bold;
+}

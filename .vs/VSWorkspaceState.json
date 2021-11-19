@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\adminpage",
+    "\\src\\app\\adminpage\\update-profile",
+    "\\src\\app\\movies",
+    "\\src\\app\\movies\\update-movie",
+    "\\src\\app\\shared",
+    "\\src\\app\\update-myprofile",
+    "\\src\\app\\users"
+  ],
+  "SelectedNode": "\\src\\app\\app.component.html",
+  "PreviewInSolutionExplorer": false
+}

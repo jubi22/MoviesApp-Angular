@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <form #validform="ngForm" (submit)="onSubmit(validform)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="UserName" class="form-control" ngModel required
+               #name="ngModel" />
+        <span class="help-block" *ngIf="!name.valid && name.touched">
+          Enter Name!!
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" class="form-control" ngModel required email
+               #email="ngModel" />
+        <span class="help-block" *ngIf="!email.valid && email.touched">
+          Enter valid email id!!
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd" name="Password" class="form-control" ngModel
+               required minlength="3" #pwd="ngModel" />
+        <span class="help-block" *ngIf="!pwd.valid && pwd.touched">
+          Password not valid!!
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmpwd">Confirm Password</label>
+        <input type="password" id="confirmpwd" name="ConfirmPassword" class="form-control" ngModel
+               required minlength="3" #confirmpwd="ngModel" />
+        <span class="help-block" *ngIf="!confirmpwd.valid && confirmpwd.touched">
+          Password not valid!!
+        </span>
+      </div>
+
+
+      <div class="form-group">
+        <label for="dob">DOB :</label>
+        <input type="date" id="dob" name="DOB" class="form-control" ngModel required
+               #dob="ngModel" />
+        <span class="help-block" *ngIf="!dob.valid && dob.touched">
+          Enter date of birth!!
+        </span>
+      </div>
+
+      <button class="btn btn-success" type="submit"
+              [disabled]="!validform.valid">
+        Register
+      </button>
+    </form>
+  </div>
+</div>

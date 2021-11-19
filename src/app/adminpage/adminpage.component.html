@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+        <th>Action</th>
+        <th>Action</th>
+ 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let k of list">
+        <td>{{k.userName}}</td>
+        <td>{{k.email}}</td>
+        <td><a [routerLink]="['/viewuser',k.id]" skipLocationChange="true">View User</a></td>
+        <td><a [routerLink]="['/update',k.id]"skipLocationChange="true" >Update User</a></td>
+        <td><a routerLink="" (click)="onDelete(k.id)">Delete User</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
