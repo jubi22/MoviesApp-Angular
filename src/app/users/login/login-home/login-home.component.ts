@@ -9,7 +9,7 @@ import { UserService } from '../../../shared/user.service';
 })
 export class LoginHomeComponent implements OnInit {
   userdetail;
-
+  id: string;
   constructor(private router: Router, public service: UserService) { }
 
   ngOnInit() {

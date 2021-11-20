@@ -16,6 +16,7 @@ import { UpdateMyprofileComponent } from './update-myprofile/update-myprofile.co
 import { ChangepasswordComponent } from './users/changepassword/changepassword.component';
 import { LoginHomeComponent } from './users/login/login-home/login-home.component';
 import { LoginComponent } from './users/login/login.component';
+import { MyMoviesComponent } from './users/login/my-movies/my-movies.component';
 import { RegisterComponent } from './users/register/register.component';
 import { UsersComponent } from './users/users.component';
 
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent }]
   },
   { path: 'home', component: MainpageComponent },
+  { path: 'my-movie/:id', component: MyMoviesComponent },
   { path: 'update-myprofile/:id', component: UpdateMyprofileComponent, canActivate: [AuthGuard] },
   { path: 'movies', component: MoviesComponent },
   { path: 'movie-details/:id', component: MovieDetailsComponent },

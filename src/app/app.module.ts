@@ -26,6 +26,7 @@ import { AddmovieComponent } from './movies/addmovie/addmovie.component';
 import { ChangepasswordComponent } from './users/changepassword/changepassword.component';
 import { UpdateMovieComponent } from './movies/update-movie/update-movie.component';
 import { UpdateMyprofileComponent } from './update-myprofile/update-myprofile.component';
+import { MyMoviesComponent } from './users/login/my-movies/my-movies.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { UpdateMyprofileComponent } from './update-myprofile/update-myprofile.co
     AddmovieComponent,
     ChangepasswordComponent,
     UpdateMovieComponent,
-    UpdateMyprofileComponent
+    UpdateMyprofileComponent,
+    MyMoviesComponent
   ],
   imports: [
     BrowserModule,

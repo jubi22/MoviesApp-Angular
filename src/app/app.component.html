@@ -12,6 +12,7 @@
         <li *ngIf="isLog()"><a routerLink="/admin">Admin</a></li>
         <li *ngIf="isLog()"><a routerLink="/user/register">Register</a></li>
         <li *ngIf="isLog()"><a routerLink="/changepwd">Change Password</a></li>
+        <li *ngIf="isLog() &&(UserName | async)as UserName"><a *ngIf="UserName!='Admin'" [routerLink]="['/my-movie',this.id]">My Movies</a></li>
         <li *ngIf="isLog()"><a [routerLink]="['/update-myprofile',this.id]" skipLocationChange>Update-Profile</a></li>
       </ul>
 </div>

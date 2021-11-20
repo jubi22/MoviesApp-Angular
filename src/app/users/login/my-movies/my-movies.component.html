@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Movie Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let k of casted">
+        <td>{{k.movies.movieName}}</td>
+        <td>{{k.movies.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
