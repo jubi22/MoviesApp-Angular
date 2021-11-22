@@ -1,20 +1,4 @@
 <div class="container-fluid">
-  <!--<table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        
-      </tr>
-    </thead>
-    <tbody *ngFor="let k of list">
-      <tr *ngIf="this.id==k.id">
-
-        <td>{{k.userName}}</td>
-        <td>{{k.email}}</td>
-      </tr>
-    </tbody>
-  </table>-->
   <div id="user" class="row" *ngFor="let k of list">
     <div *ngIf="this.id==k.id">
       <h4>Name: {{k.userName}}</h4>

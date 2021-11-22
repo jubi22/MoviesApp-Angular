@@ -37,10 +37,13 @@ export class ViewUserComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     this.movieservice.AddCasting(form.value).subscribe(t => {
+      console.log("Successfully casted");
       this.mess.success("Casted Successfully!");
-      this.router.navigateByUrl("/admin");
+      this.movieservice.refreshCasted(this.id).subscribe(t => this.casted = t as Casting[]);
+
     },
       err => {
+        console.log("Failed to cast", err);
         this.mess.error("Error")
       }
     );

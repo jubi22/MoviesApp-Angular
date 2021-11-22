@@ -23,7 +23,7 @@ export class AdminpageComponent implements OnInit {
   {
     if (confirm("Are you sure to delete this user?")) {
       this.service.DeleteUser(id).subscribe(t => {
-        console.log("succes deleted", t);
+        console.log("successfully deleted", t);
         this.mess.success("Deleted Successfully");
         this.service.refreshPage().then(x => this.list = x as User[]);
       },

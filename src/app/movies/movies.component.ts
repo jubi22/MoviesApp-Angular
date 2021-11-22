@@ -22,14 +22,20 @@ export class MoviesComponent implements OnInit {
     this.service.GetMovies().subscribe(res => this.list = res as Movie[]);
     
   }
-  onDelete(id: number) {
-    if (confirm("Are you sure to delete this movie?")) {
+  onDelete(id: number)
+  {
+    if (confirm("Are you sure to delete this movie?"))
+    {
       this.service.DeleteMovie(id).subscribe(t => {
-        this.service.refresh().then(t => this.list = t as Movie[]);
-        console.log("succes deleted", t);
-        this.mess.error("Deleted Successfully");
+        console.log("successfully deleted", t);
+        this.mess.success("Deleted Successfully");
+        this.service.refreshPage().then(x => this.list = x as Movie[]);
       },
-        err => { console.log("error deleteing", err) }
+        err => {
+
+          console.log("error deleteing", err)
+          this.mess.error("Some error occurred!")
+        }
       )
     }
   }

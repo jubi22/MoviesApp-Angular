@@ -3,10 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\adminpage",
+    "\\src\\app\\adminpage\\view-user",
     "\\src\\app\\shared",
     "\\src\\app\\users",
-    "\\src\\app\\users\\changepassword"
+    "\\src\\app\\users\\register"
   ],
-  "SelectedNode": "\\src\\app\\shared\\user.service.ts",
+  "SelectedNode": "\\src\\app\\adminpage\\view-user\\view-user.component.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -13,7 +13,7 @@
       <td>{{k.movieName}}</td>
       <td><a [routerLink]="['/movie-details',k.movieID]" skipLocationChange="true">Details</a></td>
       <td><a *ngIf="this.admin=='Admin'" [routerLink]="['/update-movie',k.movieID]" skipLocationChange>Update Movie</a></td>
-      <td><a  *ngIf="this.admin=='Admin'" routerLink="" (click)="onDelete(k.movieID)">Delete Movie</a></td>
+      <td><a  *ngIf="this.admin=='Admin'" routerLink="/movies" (click)="onDelete(k.movieID)">Delete Movie</a></td>
     </tr>
   </tbody>
 </table>
