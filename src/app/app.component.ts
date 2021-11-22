@@ -8,20 +8,22 @@ import { UserService } from './shared/user.service';
 })
 export class AppComponent implements OnInit {
   LoginStatus: Observable<boolean>;
-  id: string;
   UserName: Observable<string>;
+  UserID: Observable<string>;
+  id;
   name;
 /*  UserName$: Observable<string>;*/
   constructor(private ser: UserService) { }
   ngOnInit() {
     /*    this.status = this.ser.LoginStatus();*/
  
-    /*return this.name=this.ser.name;*/
+  /*  return this.name=this.ser.name;*/
     this.name = localStorage.getItem('username');
     /*console.log(this.name);*/
     this.LoginStatus = this.ser.isLoggesIn;
 
     this.UserName = this.ser.currentUserName;
+    this.UserID = this.ser.currentUserID;
     this.id = localStorage.getItem('id');
 
   }

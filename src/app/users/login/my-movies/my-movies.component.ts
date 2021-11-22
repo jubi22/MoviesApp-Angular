@@ -19,7 +19,7 @@ export class MyMoviesComponent implements OnInit {
       this.movieid = t.get('id');
       console.log(this.movieid);
     });
-    this.service.GetCastedMovies(this.movieid).subscribe(t => console.log(this.casted = t as Casting[]));
+    this.service.GetCastedMovies(this.movieid).subscribe(x=> console.log(this.casted = x as Casting[]));
   }
 
 }

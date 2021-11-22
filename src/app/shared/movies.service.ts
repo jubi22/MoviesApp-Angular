@@ -19,6 +19,10 @@ export class MovieService {
   DeleteMovie(id: number) {
     return this.http.delete(environment.apiUrl + '/delete-movie/' + id, { responseType:'text' });
   }
+  DeleteCastedMovie(id: number) {
+    return this.http.delete(environment.apiUrl + '/delete-casted/' + id, { responseType: 'text' });
+  }
+
   AddMovies(movie: Movie) {
     return this.http.post(environment.apiUrl + '/addmovie', movie);
   }
@@ -31,7 +35,7 @@ export class MovieService {
     return this.http.get(environment.apiUrl + '/cast-actor/' + Id);
   }
   GetCastedMovies(Id: string) {
-    return this.http.get(environment.apiUrl + '/cast-actor/' + Id);
+    return this.http.get(environment.apiUrl + '/cast-actor/' + Id, { responseType: 'json' });
   }
 
   AddCasting(cast: Casting) {

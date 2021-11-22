@@ -14,8 +14,9 @@ import { ChangePassword } from './change-pwd.model';
 })
 export class UserService {
   private loginStatus = new BehaviorSubject<boolean>(this.checkLoginStatus());
-  public name: string = localStorage.getItem('username');
+/*  public name: string = localStorage.getItem('username');*/
   private UserName = new BehaviorSubject<string>(localStorage.getItem('username'));
+  private UserID = new BehaviorSubject<string>(localStorage.getItem('id'));
  
 
   list: User[];
@@ -35,6 +36,7 @@ export class UserService {
     var tokenheader = new HttpHeaders({ 'Authorization': 'Bearer ' + localStorage.getItem('token') });
     this.loginStatus.next(true);
     this.UserName.next(localStorage.getItem('username'))
+    this.UserID.next(localStorage.getItem('id'))
     return this.http.get(environment.apiUrl + '/userdetail', { headers: tokenheader });
   }
   Logout() {
@@ -74,7 +76,9 @@ export class UserService {
   get currentUserName() {
     return this.UserName.asObservable();
   }
-
+  get currentUserID() {
+    return this.UserID.asObservable();
+  }
 
   //isLogin()
   //{

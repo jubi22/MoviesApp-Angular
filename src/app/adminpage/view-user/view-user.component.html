@@ -20,6 +20,16 @@
         </div>
         <input type="hidden" name="UserID" ngModel="{{this.id}}" />
         <button type="submit" class="btn btn-success">Add movie</button>
+      </form><h3><b>OR</b></h3>&nbsp;
+      <form #remove="ngForm" (submit)="onRemove(remove)">
+        <div class="form-group">
+          <select id="movie" name="MovieID" ngModel>
+            <option value="">Choose a Movie</option>
+            <option *ngFor="let x of movie" [ngValue]="x.movieID">{{x.movieName}}</option>
+          </select>
+        </div>
+        <input type="hidden" name="UserID" ngModel="{{this.id}}" />
+        <button type="submit" class="btn btn-danger">Remove movie</button>
       </form>
     </div>
   </div>
