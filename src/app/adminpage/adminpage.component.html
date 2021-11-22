@@ -16,7 +16,7 @@
         <td>{{k.email}}</td>
         <td><a [routerLink]="['/viewuser',k.id]" skipLocationChange="true">View User</a></td>
         <td><a [routerLink]="['/update',k.id]"skipLocationChange="true" >Update User</a></td>
-        <td><a routerLink="" (click)="onDelete(k.id)">Delete User</a></td>
+        <td><a routerLink="/admin" (click)="onDelete(k.id)">Delete User</a></td>
       </tr>
     </tbody>
   </table>

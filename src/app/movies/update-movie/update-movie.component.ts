@@ -19,7 +19,8 @@ export class UpdateMovieComponent implements OnInit {
 
   ngOnInit() {
     this.u = this.activated.paramMap.subscribe(t => {
-      this.id = t.get('id');
+      this.id = Number( t.get('id'));
+      console.log(this.id);
       const users = this.service.GetMovies();
       /*     console.log("list : ", this.list);*/
       users.subscribe(x => this.list = x as Movie[]);
@@ -27,6 +28,7 @@ export class UpdateMovieComponent implements OnInit {
     });
   }
   onSubmit(form: NgForm) {
+    form.value.MovieID = this.id;
     this.service.UpdateMovie(form.value).subscribe(
       res => {
         if (res != null) {
@@ -43,5 +45,4 @@ export class UpdateMovieComponent implements OnInit {
       }
     );
   }
-
 }

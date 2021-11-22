@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
 import { Login } from './login.model';
 import { User } from './register.model';
 import { map } from 'rxjs/operators';
+import { ChangePassword } from './change-pwd.model';
 
 @Injectable({
   providedIn: 'root'
@@ -100,18 +101,18 @@ export class UserService {
     return this.http.get(environment.apiUrl + '/getusers');
   }
   DeleteUser(Id: string) {
-    return this.http.delete(environment.apiUrl + '/delete/' + Id);
+    return this.http.delete(environment.apiUrl + '/delete/' + Id, { responseType:'text' });
     //console.log("Deleted");
     //this.router.navigateByUrl("/home");
   }
-  refresh() {
+  refreshPage() {
     return this.http.get(environment.apiUrl + '/getusers').toPromise();
   }
   UpdateUser(user: User) {
     return this.http.put(environment.apiUrl + '/update', user);
   }
-  ChangePassword(user: User) {
-    return this.http.put(environment.apiUrl + '/changepwd', user);
+  ChangePassword(changepwd: ChangePassword) {
+    return this.http.put(environment.apiUrl + '/change-pwd', changepwd);
   }
 
 }

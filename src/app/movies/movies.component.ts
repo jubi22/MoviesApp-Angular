@@ -20,7 +20,7 @@ export class MoviesComponent implements OnInit {
   ngOnInit() {
     this.admin = localStorage.getItem('username');
     this.service.GetMovies().subscribe(res => this.list = res as Movie[]);
-
+    
   }
   onDelete(id: number) {
     if (confirm("Are you sure to delete this movie?")) {

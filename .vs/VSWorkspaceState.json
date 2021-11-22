@@ -3,13 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\adminpage",
-    "\\src\\app\\adminpage\\update-profile",
-    "\\src\\app\\movies",
-    "\\src\\app\\movies\\update-movie",
     "\\src\\app\\shared",
-    "\\src\\app\\update-myprofile",
-    "\\src\\app\\users"
+    "\\src\\app\\users",
+    "\\src\\app\\users\\changepassword"
   ],
+  "SelectedNode": "\\src\\app\\shared\\user.service.ts",
   "PreviewInSolutionExplorer": false
 }
