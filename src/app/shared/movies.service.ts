@@ -19,8 +19,8 @@ export class MovieService {
   DeleteMovie(id: number) {
     return this.http.delete(environment.apiUrl + '/delete-movie/' + id, { responseType:'text' });
   }
-  DeleteCastedMovie(id: number) {
-    return this.http.delete(environment.apiUrl + '/delete-casted/' + id, { responseType: 'text' });
+  DeleteCastedMovie(mid: number, uid: string) {
+    return this.http.delete(environment.apiUrl + '/delete-casted/' + mid+'/'+uid, { responseType: 'text' });
   }
 
   AddMovies(movie: Movie) {

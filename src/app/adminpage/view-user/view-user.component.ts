@@ -50,7 +50,7 @@ export class ViewUserComponent implements OnInit {
   }
 
   onRemove(form: NgForm) {
-    this.movieservice.DeleteCastedMovie(form.value.MovieID).subscribe(t => {
+    this.movieservice.DeleteCastedMovie(form.value.MovieID, form.value.UserID).subscribe(t => {
       console.log("deleted casted movie");
       this.mess.success("Movie removed");
       this.movieservice.refreshCasted(this.id).subscribe(t => this.casted = t as Casting[]);
