@@ -17,22 +17,25 @@ export class RegisterComponent implements OnInit {
 
   }
   onSubmit(form: NgForm) {
-    this.service.AddUser(form.value).subscribe(
-      res => {
-        if (res != null) {
+    if (form.value.Password != form.value.ConfirmPassword) {
+      this.mess.error("Passwords are not matching!");
+    }
+    else {
+      this.service.AddUser(form.value).subscribe(
+        res => {
+          if (res != null) {
+            form.reset();
+            console.log("Success");
+            this.mess.success("User registration successful!");
+          }
+
+        },
+        err => {
           form.reset();
-          console.log("Success");
-          this.mess.success("User registration successful!");
+          console.log(" Some Error has occured");
+          this.mess.error("Failed to add user!");
         }
-
-      },
-      err => {
-        form.reset();
-        console.log(" Some Error has occured");
-        this.mess.error("Failed to add user!");
-      }
-    );
-
-
+      );
+    }
   }
 }

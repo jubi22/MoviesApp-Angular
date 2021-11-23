@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { UserService } from './shared/user.service';
 @Component({
@@ -12,8 +13,8 @@ export class AppComponent implements OnInit {
   UserID: Observable<string>;
   id;
   name;
-/*  UserName$: Observable<string>;*/
-  constructor(private ser: UserService) { }
+  /*  UserName$: Observable<string>;*/
+  constructor(private ser: UserService, private route: Router) { }
   ngOnInit() {
     /*    this.status = this.ser.LoginStatus();*/
  
@@ -25,7 +26,7 @@ export class AppComponent implements OnInit {
     this.UserName = this.ser.currentUserName;
     this.UserID = this.ser.currentUserID;
     this.id = localStorage.getItem('id');
-
+ 
   }
   Logout() {
      this.ser.Logout();

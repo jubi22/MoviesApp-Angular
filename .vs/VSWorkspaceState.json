@@ -6,9 +6,11 @@
     "\\src\\app\\adminpage",
     "\\src\\app\\adminpage\\view-user",
     "\\src\\app\\shared",
+    "\\src\\app\\update-myprofile",
     "\\src\\app\\users",
-    "\\src\\app\\users\\register"
+    "\\src\\app\\users\\login",
+    "\\src\\app\\users\\login\\my-movies"
   ],
-  "SelectedNode": "\\src\\app\\adminpage\\view-user\\view-user.component.ts",
+  "SelectedNode": "\\src\\app\\update-myprofile\\update-myprofile.component.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -14,7 +14,7 @@
       <tr *ngFor="let k of list">
         <td>{{k.userName}}</td>
         <td>{{k.email}}</td>
-        <td><a [routerLink]="['/viewuser',k.id]" >View User</a></td>
+        <td><a [routerLink]="['/viewuser',k.id]"skipLocationChange >View User</a></td>
         <td><a [routerLink]="['/update',k.id]"skipLocationChange="true" >Update User</a></td>
         <td><a routerLink="/admin" (click)="onDelete(k.id)">Delete User</a></td>
       </tr>
